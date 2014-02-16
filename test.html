@@ -17,9 +17,20 @@
         
         console.log("URL: " + get_param("url"));
         console.log("Title: " + get_param("title"));
+        
+        var token = unescape(document.cookie.replace(new RegExp("(?:^|.*;\\s*)" + escape("extension_token").replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*((?:[^;](?!;))*[^;]?).*"), "$1")); 
     </script>
 </head>
 <body>
+
+<form method="POST" action="http://linkydink.io/links/add/">
+<input type="hidden" name="token" value="">
+<input type="text" name="url" value="http://www.google.com" placeholder="url">
+<input type="text" name="title" value="" placeholder="title">
+<input type="hidden" name="group" value="9aab596c7157"> <!-- harcoded for now, sorry. --> 
+<input type="submit">
+
+</form>
 
 </body>
 </html>
