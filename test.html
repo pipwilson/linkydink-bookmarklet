@@ -20,15 +20,199 @@
         
         var token = unescape(document.cookie.replace(new RegExp("(?:^|.*;\\s*)" + escape("extension_token").replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*((?:[^;](?!;))*[^;]?).*"), "$1")); 
     </script>
+    <style type="text/css">
+/*
+ * Linkydink chrome extension stylesheet
+ *
+ * made by ntlk at Makeshift
+ *
+ * Colours:
+ * blue: #6090C9;
+ * pale blue: #e1eaf5
+ * grey: #aeb9ba
+ * links: #4a6171
+ *
+ */
+
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: 'DinRegular';
+  src: url(../fonts/DINWeb.eot);
+  src: url(../fonts/DINWeb.eot?#iefix) format("embedded-opentype"), url(../fonts/DINWeb.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DinMedium';
+  src: url(../fonts/DINWeb-Medium.eot);
+  src: url(../fonts/DINWeb-Medium.eot?#iefix) format("embedded-opentype"), url(../fonts/DINWeb-Medium.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'DinRegular', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  background: #fff;
+  color: #839597;
+  width: 400px;
+}
+
+a {
+  color: #315d92;
+  text-decoration: none;
+  outline: none;
+}
+
+a:hover, a:focus, a:active {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'DinMedium', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+  font-size: 1.8em;
+}
+
+h2 {
+  font-size: 1.2em;
+  margin-bottom: 0.875em;
+}
+
+ p {
+  text-align: center;
+  font-size: 1.2em;
+  font-family: 'DinMedium', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+ }
+
+select {
+  box-sizing: border-box;
+  display: inline-block;
+  font-family: "DinRegular", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-size: 1.025em;
+  font-weight: 300;
+  line-height: 27px;
+  vertical-align: middle;
+  background-color: #fff;
+  color: #4a6171;
+  border-radius: 3px;
+  -webkit-appearance: none;
+  appearance: none;
+  border: 1px solid #e1eaf5;
+  background: #fff url(../images/triangle.svg) center right no-repeat;
+  padding: 8px 50px 4px 9px;
+}
+
+select[multiple],
+select[size] {
+  height: auto;
+}
+
+select:focus {
+  outline: none;
+  border: 1px solid #6090C9;
+}
+
+input[type=submit] {
+  box-sizing: border-box;
+  display: inline-block;
+  font-family: "DinRegular", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-size: 1.025em;
+  font-weight: 300;
+  line-height: 27px;
+  padding: 8px 9px 4px;
+  background: inherit;
+  border: inherit;
+  color: #4a6171;
+  cursor: pointer;
+}
+
+input, textarea {
+  display: block;
+  font-family: "DinRegular", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-size: 1.025em;
+  font-weight: 300;
+  line-height: 27px;
+  vertical-align: middle;
+  background-color: #fff;
+  color: #4a6171;
+  border-radius: 3px;
+  -webkit-appearance: none;
+  appearance: none;
+  border: 1px solid #e1eaf5;
+  width: 100%;
+  margin-bottom: 0.3em;
+  padding: 8px 10px;
+  box-sizing: border-box;
+}
+
+input[type=text]:focus, textarea:focus {
+  border: 1px solid #6090C9;
+  outline: none;
+}
+
+#groups-wrapper {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.wrapper--dark {
+  background: #6090C9;
+  color: #fff;
+  padding: 1em;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrapper--pale {
+  background: #e1eaf5;
+  color: #fff;
+  padding: 1em;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrapper {
+  background: #fff;
+  padding: 1em;
+}
+
+.wrapper__inner {
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+}
+
+header a, header a:hover, header a:focus, header a:active {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+}
+
+.img--centered {
+  display: block;
+  margin: 0 auto;
+}
+
+    </style>
 </head>
-<body>
+<body class="wrapper">
 
 <form method="POST" action="http://linkydink.io/links/add/">
 <input type="hidden" name="token" value="">
 <input type="text" name="url" value="http://www.google.com" placeholder="url">
 <input type="text" name="title" value="" placeholder="title">
 <input type="hidden" name="group" value="9aab596c7157"> <!-- harcoded for now, sorry. --> 
-<input type="submit">
+<input type="submit" value="Submit">
 
 </form>
 
